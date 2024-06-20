@@ -36,18 +36,21 @@ param.hyd_D = 1.6e-6;    % In cc/rev
 T = 1;
 param.on_time = 0;
 
-%% Energy conversion plots
-x = sim("Copy_of_trying_something_23a.slx");
+% Velocity of the piston
+xdot = 1e-3;
 
-t = x.tout*1e3;
-Regen = x.Regen.Data;
-KE = x.KE.Data;
-P1 = x.P1.Data;
-T_elec = x.T_elec.Data;
-omega = x.omega.Data;
-KE_power = x.KE_power.Data;
-Regen_power = x.Regen_power.Data;
-Losses = x.Losses.Data;
+%% Energy conversion plots
+simulation = sim("Copy_2_of_third_copy_of_Rotary_system_h_bridge_23a.slx");
+
+t = simulation.tout*1e3;
+Regen = simulation.Regen.Data;
+KE = simulation.KE.Data;
+P1 = simulation.P1.Data;
+T_elec = simulation.T_elec.Data;
+omega = simulation.omega.Data;
+KE_power = simulation.KE_power.Data;
+Regen_power = simulation.Regen_power.Data;
+Losses = simulation.Losses.Data;
 
 figure(1)
 subplot(3,2,1)
