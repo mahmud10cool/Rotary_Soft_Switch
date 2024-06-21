@@ -251,7 +251,7 @@ P1next = p1;
 P2next = p2;
 theta_dot_next = thetadot;
 
-%% Starting the DP
+%% Starting the Dynamic Programming
 startTimer = tic;
 
 disp('DP started successfully.')
