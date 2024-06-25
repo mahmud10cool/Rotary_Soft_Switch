@@ -41,7 +41,7 @@ for i = n-2:n-1
     param.J_hyd = J_hyd_array(i);
     param.hyd_D = hyd_D_array(i);    % In cc/rev
     
-    mdl = "Copy_2_of_third_copy_of_Rotary_system_h_bridge_23a.slx";
+    mdl = "with_valve_dynamics.slx";
     open_system(mdl);
 
     simConfig.Solver = 'ode23t';

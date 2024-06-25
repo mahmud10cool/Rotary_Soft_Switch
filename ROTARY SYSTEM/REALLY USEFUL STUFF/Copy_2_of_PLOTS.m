@@ -43,7 +43,7 @@ xdot_array = [0, 1e-6, 1e-5, 1e-4, 1e-3, 1e-2, 1e-1, 1];
 %% Energy conversion plots
 xdot = 1e-2;
 
-simulation = sim("trying_something_23a.slx");
+simulation = sim("with_valve_dynamics.slx");
 
 t = simulation.tout*1e3;
 Regen = simulation.Regen.Data;
