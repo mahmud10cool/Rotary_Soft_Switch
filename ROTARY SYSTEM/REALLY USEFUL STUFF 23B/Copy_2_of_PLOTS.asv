@@ -43,7 +43,7 @@ xdot_array = [0, 1e-6, 1e-5, 1e-4, 1e-3, 1e-2, 1e-1, 1];
 %% Energy conversion plots
 xdot = 1e-2;
 
-simulation = sim("without_valve_dynamics.slx");
+simulation = sim("copy_without_valve_dynamics_2.slx");
 
 t = simulation.tout*1e3;
 Regen = simulation.Regen.Data;
@@ -121,7 +121,7 @@ grid on
 
 some_fig = gcf;
 
-sgtitle('Many Things','FontName','Arial','FontSize',18,'FontWeight','Bold', 'LineWidth', 2)
+sgtitle('Many Things Old','FontName','Arial','FontSize',18,'FontWeight','Bold', 'LineWidth', 2)
 set(findobj(some_fig,'type','axes'),'FontName','Arial','FontSize',15,'FontWeight','Bold', 'LineWidth', 2);
 
-set(some_fig, 'position', [0, 0, 1920, 1080])
+set(some_fig, 'position', [0, 0, 960, 1080])
