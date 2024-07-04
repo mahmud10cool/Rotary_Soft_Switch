@@ -121,7 +121,7 @@ grid on
 
 some_fig = gcf;
 
-sgtitle('Many Things Old','FontName','Arial','FontSize',18,'FontWeight','Bold', 'LineWidth', 2)
-set(findobj(some_fig,'type','axes'),'FontName','Arial','FontSize',15,'FontWeight','Bold', 'LineWidth', 2);
+% sgtitle('Many Things Old','FontName','Arial','FontSize',18,'FontWeight','Bold', 'LineWidth', 2)
+% set(findobj(some_fig,'type','axes'),'FontName','Arial','FontSize',15,'FontWeight','Bold', 'LineWidth', 2);
 
-set(some_fig, 'position', [0, 0, 960, 1080])
+set(some_fig, 'position', [0, 0, 480, 480])
