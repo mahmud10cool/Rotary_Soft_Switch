@@ -19,6 +19,9 @@ param.Cd = 0.6;
 % Fluid properties
 param.beta = 1.8e9;
 param.rho = 870;
+param.air = 0;
+
+air_array = [0, 0.1, 0.5, 1, 2.5, 5]*1e-2;
 
 % Electric motor stuff
 param.Kt = 70.5e-3;
@@ -36,12 +39,21 @@ param.hyd_D = 1.61e-6;    % In cc/rev
 T = 1;
 param.on_time = 0;
 
+% Linear Actuator Piston
+param.Acap = 0.0045;
+
+% Valve Dynamics
+param.wn = 50*2*pi;
+param.zeta = 1;
+
 % Velocity of the piston
 xdot_array = [0, 1e-6, 1e-5, 1e-4, 1e-3, 1e-2, 1e-1, 1];
 
+% Initializing some arrays
+settling_time = zeros(size(air_array));
+Regen_to_input = zeros(size(air_array));
 
 %% Energy conversion plots
-xdot = 1e-2;
 
 simulation = sim("Copy_of_with_actual_valve_dynamics_23a.slx");
 
@@ -51,11 +63,13 @@ KE = simulation.KE.Data;
 P1 = simulation.P1.Data;
 T_elec = simulation.T_elec.Data;
 omega = simulation.omega.Data;
-KE_power = simulation.KE_power.Data;
+mech_power = simulation.mech_power.Data;
 Regen_power = simulation.Regen_power.Data;
 Losses = simulation.Losses.Data;
 displacement = simulation.x.Data;
 velocity = simulation.xdot.Data;
+Energy_In = simulation.Energy_In.Data;
+Time_settle = simulation.Time_settle.Data;
 
 %% Plots
 figure(1)
@@ -84,7 +98,7 @@ yticklabels({'P_M = 10',12.5, 15, 17.5,'P_H = 20'});
 grid on
 
 subplot(4,2,4)
-plot(t, KE_power*1e-3, 'r', t, Regen_power*1e-3, 'g', LineWidth=3)
+plot(t, mech_power*1e-3, 'r', t, Regen_power*1e-3, 'g', LineWidth=3)
 title('Power')
 xlabel('Time (ms)')
 ylabel('Power (kW)')
@@ -124,4 +138,4 @@ some_fig = gcf;
 % sgtitle('Many Things Old','FontName','Arial','FontSize',18,'FontWeight','Bold', 'LineWidth', 2)
 % set(findobj(some_fig,'type','axes'),'FontName','Arial','FontSize',15,'FontWeight','Bold', 'LineWidth', 2);
 
-set(some_fig, 'position', [0, 0, 480, 480])
+set(some_fig, 'position', [0, 0, 720, 480])
