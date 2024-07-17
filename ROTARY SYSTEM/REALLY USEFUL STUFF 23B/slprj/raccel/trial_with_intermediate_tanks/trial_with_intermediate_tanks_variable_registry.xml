@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MF0 version="1.1" packageUris="http://schema.mathworks.com/mf0/slsa_mm_parameter_tuning/R2021b">
+  <slsa.mm.parametertuning.VariableRegistry type="slsa.mm.parametertuning.VariableRegistry" uuid="6a6157a2-b867-4a1a-8f8e-0983c7ce087a">
+    <defaultValueCachePath>/panfs/jay/groups/1/lixxx099/ibrah408/Rotary_system_git/ROTARY SYSTEM/REALLY USEFUL STUFF 23B/slprj/raccel/trial_with_intermediate_tanks/trial_with_intermediate_tanks_default_variable_values.mat</defaultValueCachePath>
+    <name>trial_with_intermediate_tanks</name>
+    <variables type="slsa.mm.parametertuning.Variable" uuid="dfbfd86e-88a8-4ffa-9a3f-8c0e521d47d6">
+      <name>param</name>
+      <workspace type="slsa.mm.parametertuning.Workspace" uuid="4fc09662-657f-4f44-a00c-c4d743936563"/>
+    </variables>
+    <workspaces type="slsa.mm.parametertuning.Workspace" uuid="4fc09662-657f-4f44-a00c-c4d743936563">
+      <name>global-workspace</name>
+      <variables type="slsa.mm.parametertuning.Variable" uuid="dfbfd86e-88a8-4ffa-9a3f-8c0e521d47d6"/>
+    </workspaces>
+  </slsa.mm.parametertuning.VariableRegistry>
+</MF0>

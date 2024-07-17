@@ -2,61 +2,61 @@
 clc; clear; close;
 
 %% Parameters
-param = struct();
-
-% Volume of chambers 
-param.V1_0 = 1e-3;
-param.V2_0 = 20e-6;
-
-% Pressure rails
-param.P_H = 20e6;
-param.P_M = 10e6;
-param.P_L = 101325;
-
-% Valve things
-param.max_Avt = 0.5*0.25*pi*(20e-3)^2;
-param.Cd = 0.6;
-
-% Fluid properties
-param.beta = 1.8e9;
-param.rho = 870;
-param.air = 0;
-
-air_array = [0, 0.1, 0.5, 1, 2.5, 5]*1e-2;
-
-% Electric motor stuff
-param.Kt = 70.5e-3;
-param.Ke = 70.5e-3;
-param.J_elec = 1530e-7;
-
-% Pump things
-J_hyd_array = [246, 550, 3000, 9620, 11200]*1e-7;
-hyd_D_array = [0.4, 0.8, 1.61, 3.13, 6.29]*1e-6;
-
-param.J_hyd = 3000e-7;
-param.hyd_D = 1.61e-6;    % In cc/rev
-
-% Simulation time
-T = 1;
-param.on_time = 0;
-
-% Linear Actuator Piston
-param.Acap = 0.0045;
-
-% Valve Dynamics
-param.wn = 50*2*pi;
-param.zeta = 1;
-
-% Velocity of the piston
-xdot_array = [0, 1e-6, 1e-5, 1e-4, 1e-3, 1e-2, 1e-1, 1];
-
-% Initializing some arrays
-settling_time = zeros(size(air_array));
-Regen_to_input = zeros(size(air_array));
+% param = struct();
+% 
+% % Volume of chambers 
+% param.V1_0 = 1e-3;
+% param.V2_0 = 20e-6;
+% 
+% % Pressure rails
+% param.P_H = 20e6;
+% param.P_M = 10e6;
+% param.P_L = 101325;
+% 
+% % Valve things
+% param.max_Avt = 0.5*0.25*pi*(20e-3)^2;
+% param.Cd = 0.6;
+% 
+% % Fluid properties
+% param.beta = 1.8e9;
+% param.rho = 870;
+% param.air = 0;
+% 
+% air_array = [0, 0.1, 0.5, 1, 2.5, 5]*1e-2;
+% 
+% % Electric motor stuff
+% param.Kt = 70.5e-3;
+% param.Ke = 70.5e-3;
+% param.J_elec = 1530e-7;
+% 
+% % Pump things
+% J_hyd_array = [246, 550, 3000, 9620, 11200]*1e-7;
+% hyd_D_array = [0.4, 0.8, 1.61, 3.13, 6.29]*1e-6;
+% 
+% param.J_hyd = 3000e-7;
+% param.hyd_D = 1.61e-6;    % In cc/rev
+% 
+% % Simulation time
+% T = 1;
+% param.on_time = 0;
+% 
+% % Linear Actuator Piston
+% param.Acap = 0.0045;
+% 
+% % Valve Dynamics
+% param.wn = 50*2*pi;
+% param.zeta = 1;
+% 
+% % Velocity of the piston
+% xdot_array = [0, 1e-6, 1e-5, 1e-4, 1e-3, 1e-2, 1e-1, 1];
+% 
+% % Initializing some arrays
+% settling_time = zeros(size(air_array));
+% Regen_to_input = zeros(size(air_array));
 
 %% Energy conversion plots
 
-simulation = sim("Copy_of_with_actual_valve_dynamics_23a.slx");
+simulation = sim("trial_with_intermediate_tanks.slx");
 
 t = simulation.tout*1e3;
 Regen = simulation.Regen.Data;
