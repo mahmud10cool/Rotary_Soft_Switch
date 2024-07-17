@@ -11,6 +11,7 @@ param.V2_0 = 20e-6;
 % Pressure rails
 param.P_H = 20e6;
 param.P_M = 10e6;
+param.P_L = 101325;
 
 % Valve things
 param.max_Avt = 0.5*0.25*pi*(20e-3)^2;
