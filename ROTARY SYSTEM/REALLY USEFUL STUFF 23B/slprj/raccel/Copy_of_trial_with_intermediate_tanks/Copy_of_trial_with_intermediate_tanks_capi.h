@@ -1,0 +1,6 @@
+#ifndef RTW_HEADER_Copy_of_trial_with_intermediate_tanks_capi_h_
+#define RTW_HEADER_Copy_of_trial_with_intermediate_tanks_capi_h_
+#include "Copy_of_trial_with_intermediate_tanks.h"
+extern void Copy_of_trial_with_intermediate_tanks_InitializeDataMapInfo (
+void ) ;
+#endif
