@@ -107,7 +107,7 @@ ylabel('Power (kW)')
 grid on
 
 subplot(4,2,5)
-plot(t, T_elec*(1/80e-3), 'm', LineWidth=3)
+plot(t, T_elec*(1/109e-3), 'm', LineWidth=3)
 title('Regenerated Electric Current')
 xlabel('Time (ms)')
 ylabel('Current (A)')
